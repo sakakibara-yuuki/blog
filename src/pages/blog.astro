@@ -1,3 +1,8 @@
+---
+import Navigation from '../components/Navigation.astro'
+import Footer from '../components/Footer.astro'
+---
+
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -6,9 +11,7 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>My blog</title>
 	</head>
-  <a href="/">ホーム</a>
-  <a href="/about">概要</a>
-  <a href="/blog">my blog</a>
+  <Navigation />
   <body>
     <h1>私のAstro 学習サイト</h1>
     <h1>ここには、私がAstroを学んでいく旅の様子を投稿します。</h1>
@@ -17,5 +20,6 @@
       <li><a href="/posts/post-2/">記事2</a></li>
       <li><a href="/posts/post-3/">記事3</a></li>
     </ul>
+    <Footer />
   </body>
 </html>
