@@ -12,6 +12,22 @@
 - icon
 - netlifty, astro以外のフレームワークやサービスを使用しない
 
+### TODO
+#### Figma
+
+- [Figmaの使いやすさを向上する設定のヒント](https://wentz-design.com/post/figma-useful-settings/)
+- [Figmaで汎用的なUIコンポーネントを作る方法](https://wentz-design.com/post/figma-how-to-design-ui-components/)
+- [Figmaのプロトタイプのスクロール制御に関する設定](https://wentz-design.com/post/figma-how-to-setting-scroll/)
+- [Figmaでヘッダーを画面上部に固定して追従させる（プロトタイプ）](https://wentz-design.com/post/figma-header-sticky-animation-prototype/)
+- [Figma・FigJamでシンプルなグラフを生成するプラグイン集](https://wentz-design.com/post/figma-figjam-simple-graph-plugin/)
+- [Figmaでシンプルな棒グラフを生成するプラグインの紹介](https://wentz-design.com/post/figma-simple-bar-chart-plugin/)
+- [Figmaでシンプルな多角形グラフ（レーダーチャート）を作成する方法](https://wentz-design.com/post/figma-simple-radar-chart-plugin/)
+- [Figmaで効率的にオブジェクトモデルを設計する方法](https://wentz-design.com/post/figma-how-to-create-objective-model/)
+- [Figmaで作成したアニメーションをLottieFilesに書き出す方法](https://wentz-design.com/post/how-to-convert-figma-animations-to-lottie-files-by-plugin/)
+- [Figmaファイルをローカルに書き出し・保存する方法](https://wentz-design.com/post/figma-how-to-save-local-file/)
+- [UIデザインの作業を加速するFigmaプラグイン10選](https://wentz-design.com/post/favorite-figma-plugins/)
+- [Figmaでダイアログをオーバーレイで表示させる（プロトタイプ）](https://wentz-design.com/post/figma-overlay-dialog-prototype/)
+
 # Astro Starter Kit: Minimal
 
 ```sh
