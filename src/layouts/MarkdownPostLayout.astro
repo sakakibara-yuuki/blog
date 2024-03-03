@@ -4,19 +4,19 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
+  <img src={frontmatter.image.url} width="80%" height="80%" alt={frontmatter.image.alt} />
   <p>pubDate: {frontmatter.pubDate.slice(0,10)}</p>
   <p>author: {frontmatter.author}</p>
-  <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
   <div class="tags">
     {frontmatter.tags.map((tag) => (
-      <p class="tags">
+      <p class="tag">
       <a href={`/tags/${tag}`}>{tag}</a>
       </p>
     ))}
   </div>
-
   <slot />
 </BaseLayout>
+
 <style>
   a {
     color: #00539F;
@@ -32,7 +32,7 @@ const { frontmatter } = Astro.props;
     border: dotted 1px #a1a1a1;
     border-radius: .5em;
     padding: .5em 1em;
-    # font-size: 1.15em;
+    font-size: 1.5em;
     background-color: #F8FCFD;
   }
 </style>
