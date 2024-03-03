@@ -1,17 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const pageTitle = "Home Page";
-
-
-import fetchApi from '../lib/strapi';
-import type Article from '../interfaces/article';
-
-const articles = await fetchApi<Article[]>({
-  endpoint: 'articles', // the content type to fetch
-  wrappedByKey: 'data', // the key to unwrap the response
-});
+const pageTitle = "Sakakibara's blog";
 ---
 
+
 <BaseLayout pageTitle={pageTitle}>
-  <h2>このサイトについて</h2>
 </BaseLayout>
