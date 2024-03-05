@@ -31,6 +31,7 @@ body {
   max-width: 80ch;
   padding: 1rem;
   line-height: 1.5;
+  letter-spacing: 1px; /* custom */
 }
 
 * {
@@ -39,7 +40,7 @@ body {
 
 h1 {
   margin: 1rem 0;
-  font-size: var(--s4);
+  font-size: var(--s3);
   color: purple;
 }
 
@@ -53,6 +54,21 @@ h3 {
 
 h4 {
   font-size: var(--s1);
+}
+
+table {
+  /* table-layout: 100%; */
+  /* width: 120px; */
+  border: 0.1em solid black;
+  border-collapse: collapse;
+}
+
+table th {
+  background-color: rgb(228, 240, 245);
+  border: 0.1em solid black;
+}
+table td {
+  border: 0.1em solid black;
 }
 
 /* ナビゲーションのスタイル */
