@@ -256,6 +256,9 @@ ps [optinos]
 ```zsh title=kill
 kill [-signal] pid|name
 ```
+$$
+L = \frac{1}{2}
+$$
 
 プロセスとジョブって何が違うんスカ？
 

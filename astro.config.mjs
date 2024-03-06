@@ -13,10 +13,13 @@ export default defineConfig({
   output: "server",
   adapter: netlify(),
   markdown: {
-    remarkPlugins: [[ remarkToc, { heading: "contents" }]],
+    remarkPlugins: [
+      'remark-math',
+      [ remarkToc, { heading: "contents" }]],
     rehypePlugins: [
       rehypeSlug,
       [rehypeAutolinkHeadings, { behavior: 'append' }],
+      ['rehype-katex', {}],
     ],
   },
   integrations: [
