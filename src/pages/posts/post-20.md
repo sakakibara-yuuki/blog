@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: "ファイルシステム"
+title: "ファイルシステムの奥地"
 author: "sakakibara"
-description: "上手くいかないことがありましたが、コミュニティに質問して助けてもらいました！"
+description: "ここはファイルシステムの森"
 image:
     url: "https://docs.astro.build/assets/rays.webp"
     alt: "Astroの光線のサムネイル。"
@@ -11,3 +11,9 @@ tags: ["ファイルシステム", "etx4", "btrfs", "linux"]
 ---
 
 
+## 木も見て森も見ろ
+ファイルシステム
+ブロックデバイス
+DBの構成
+シンボリックリンク・ハードリンク
+ファイルの権限
