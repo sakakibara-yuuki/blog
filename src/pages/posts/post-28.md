@@ -10,5 +10,9 @@ pubDate: 2024-03-06
 tags: ["astro", "公開学習", "後退", "コミュニティ"]
 ---
 
+## /usr/bin/local vs ~/.local/bin
 
-すべてがスムーズにいくわけではありませんでしたが、Astroで何かを作るのは楽しいです。そして、[Discordコミュニティ](https://astro.build/chat)は本当にフレンドリーで助けになります！
+
+
+
+
