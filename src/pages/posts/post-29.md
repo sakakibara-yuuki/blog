@@ -394,6 +394,18 @@ XDGのBase directoryは以下のコンセプトに従って策定されている
 | XDG_CACHE_HOME        | $HOME/.cache                  | キャッシュファイル                                   |
 | XDG_RUNTIME_DIR       | -                             | socket, pipeなどのファイルオブジェクト |
 
+
+結果的にzshrcは以下のようになる。
+```zsh title='zshrc'
+# XDG environment value
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_STATE_HOME="$HOME/.local/state"
+
+export XDG_DATA_DIRS="/usr/local/share/:/usr/share/"
+export XDG_CONFIG_DIRS="/etc/xdg"
+export XDG_CACHE_HOME="$HOME/.cache"
+```
 XDG_DATA_DIRS内のディレクトリは":"で区切られます。この順序は重要度を表します。  
 XDG_CONFIG_DIRS内のディレクトリは":"で区切られます。この順序は重要度を表します。  
 また、基本的には先に示したディレクトリがより優先されます。  
