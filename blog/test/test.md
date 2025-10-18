@@ -1,5 +1,5 @@
 ---
-title: 'test'
+title: 'This is a test'
 pubDate: 2025-10-19
 ---
 
