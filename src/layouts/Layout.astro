@@ -17,11 +17,37 @@ import { Header } from '@layouts/Header'
 	</body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style is:global>
+    @charset "utf-8";
+    :root {
+      --large-size: 1024px;
+      --midium-size: 768px;
+      --small-size: 480px;
+
+      --main-bg-color: rgb(20% 20% 50%);
+      --font-color: rgb(100% 100% 100%);
+      --link-font-color: rgb(100% 100% 100%);
+      --visited-font-color: rgb(34 139 34);
+    }
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--main-bg-color);
+      color: var(--font-color);
+    }
+    a:link {
+      color: var(--link-font-color);
+    }
+    a:visited {
+      color: var(--visited-font-color);
+    }
+
+  /* @media screen and (min-width: var(--large-size)) { */
+  /**/
+  /* } */
+  /* @media screen and (min-width: var(--midium-size)) { */
+  /**/
+  /* } */
 </style>
