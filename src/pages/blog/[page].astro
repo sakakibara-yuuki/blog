@@ -1,0 +1,27 @@
+---
+import { type CollectionEntry, getCollection, getEntry, render } from 'astro:content'
+
+export async function getStaticPaths({ paginate }) {
+  const allBlog = await getCollection('blog')
+  return paginate(allBlog, { pageSize: 5 });
+}
+
+const { page } = Astro.props;
+---
+
+<p> 5 / {page.total}</p>
+
+<ul>
+  {page.data.map(blog => (
+    <li><a href=`${blog.id}`>{blog.data.title}</a></li>
+  ))}
+</ul>
+
+<div>
+  <div><a href=`${page.url.first}`> first </a></div>
+  <div><a href=`${page.url.prev}`> prev </a></div>
+  <div><a href=`${page.url.current}`> current </a></div>
+  <div><a href=`${page.url.next}`> next </a></div>
+  <div><a href=`${page.url.last}`> last </a></div>
+</div>
+
