@@ -1,0 +1,32 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { type CollectionEntry, getCollection, getEntry, render } from 'astro:content'
+
+type Props = {
+  blog: CollectionEntry<'blog'>
+}
+
+export async function getStaticPaths() {
+  const allBlog = await getCollection('blog')
+  return allBlog.map(blog => ({
+    params: { path: blog.id },
+    props: { blog }
+  }));
+}
+
+
+const { path } =  Astro.params;
+const { blog } = Astro.props; // props is data which is used in blog content
+const entry = await getEntry('blog', blog.id);
+if (!entry) {
+  throw new Error(`Could not find blog ${blog.id}`);
+}
+const { Content, headings } = await render(entry);
+---
+
+<Layout>
+  <div>{path}</div>
+  <div>This is a blog. {blog.data.title} </div>
+  <Content />
+</Layout>
+

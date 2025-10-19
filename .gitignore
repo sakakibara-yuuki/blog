@@ -1,3 +1,4 @@
+blog/test/*.md
 # build output
 dist/
 
