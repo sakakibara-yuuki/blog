@@ -1,5 +1,6 @@
 ---
 import { Header } from '@components/Header'
+import { ThemeProvider } from '@components/ThemeProvider'
 ---
 
 <!doctype html>
@@ -11,10 +12,12 @@ import { Header } from '@components/Header'
       <meta name="generator" content={Astro.generator} />
       <title>sakakibara's blog</title>
 	</head>
-	<body>
-      <Header client:load />
-      <slot />
-	</body>
+    <body>
+      <ThemeProvider client:load>
+        <Header client:load />
+        <slot />
+      </ThemeProvider>
+    </body>
 </html>
 
 <style is:global>
@@ -29,22 +32,28 @@ import { Header } from '@components/Header'
       --link-font-color: rgb(100% 100% 100%);
       --visited-font-color: rgb(34 139 34);
     }
-    html,
+
     body {
       margin: 0;
       width: 100%;
       height: 100%;
+    }
+
+    .dark-theme {
+      --main-bg-color: rgb(20% 50% 50%);
+      --font-color: rgb(51 51 51);
+    }
+
+    .light-theme {
+      --main-bg-color: rgb(90% 90% 90%);
+      --font-color: rgb(0 0 0);
+    }
+
+    .theme-container {
       background: var(--main-bg-color);
       color: var(--font-color);
     }
-    html[data-theme='dark'] {
-      --main-bg-color: rgb(240 240 240);
-      --font-color: rgb(51 51 51);
-    }
-    html[data-theme='light'] {
-      --main-bg-color: rgb(20 20 20);
-      --font-color: rgb(0 0 0);
-    }
+
     a:link {
       color: var(--link-font-color);
     }
