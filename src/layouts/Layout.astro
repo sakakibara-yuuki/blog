@@ -1,6 +1,5 @@
 ---
 import { Header } from '@layouts/Header'
-import { ThemeProvider } from '@components/ThemeContext'
 ---
 
 <!doctype html>
@@ -13,10 +12,8 @@ import { ThemeProvider } from '@components/ThemeContext'
 		<title>sakakibara's blog</title>
 	</head>
 	<body>
-      <ThemeProvider>
-        <Header />
-        <slot />
-      </ThemeProvider>
+      <Header client:load />
+      <slot />
 	</body>
 </html>
 
