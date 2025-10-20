@@ -66,6 +66,59 @@ function Counter() {
 ```
 たとえば、`createEffect`はSubscriberなので、後々incrementが呼ばれてsetCountでcount signalが更新されたときに`console.log`が呼ばれる。
 
+逆に注意すべきなのが
+```typescript
+function ThemeProvider() {
+
+  ...
+
+  const themeStyle = {
+    'dark-theme': $theme() == Theme.dark,
+    'light-theme': $theme() == Theme.light,
+    'theme-container': true
+  }
+
+  return <div classList={themeStyle}>
+}
+```
+では`$theme()`が変化した際にそのコンポーネントは更新されず、
+
+```typescript
+function ThemeProvider() {
+
+  ...
+
+  return (
+    <div classList={{
+      'dark-theme': $theme() == Theme.dark,
+      'light-theme': $theme() == Theme.light,
+      'theme-container': true
+    }}>
+  )
+}
+```
+のようにしなければ更新されないということだ。
+solidjsでは、リアクティブな値（$theme()）を使う式は、JSXの中で直接評価される必要がある。
+事前に変数に代入すると、その時点での値が固定されてしまい、リアクティビティが失われる。
+
+ちなみにこれを回避する手段として
+```typescript
+function ThemeProvider() {
+
+  ...
+
+  const themeStyle = createMemo(() => {
+    'dark-theme': $theme() == Theme.dark,
+    'light-theme': $theme() == Theme.light,
+    'theme-container': true
+  })
+
+  return <div classList={themeStyle}>
+}
+```
+がある。
+
+
 <!-- ## 状態管理 -->
 <!-- Reactなどで採用されていた`createState`をSignalとSubscriber、つまり、状態と購読に分けたことには意味がある。 -->
 <!-- Signalはデータの保存と更新に、Subscriberはデータの変更に対応する。 -->
