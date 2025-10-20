@@ -11,7 +11,10 @@
   "dependencies": {
     "@astrojs/db": "^0.18.0",
     "@astrojs/solid-js": "^5.1.1",
-    "astro": "^5.14.6",
+    "@nanostores/solid": "^1.1.1",
+    "astro": "^5.14.7",
+    "nanostores": "^1.0.1",
+    "sharp": "^0.34.4",
     "solid-devtools": "^0.34.4",
     "solid-js": "^1.9.9"
   }

@@ -1,27 +1,70 @@
 ---
-import { Header } from '@layouts/Header'
+import { Header } from '@components/Header'
+import { ThemeProvider } from '@components/ThemeProvider'
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>sakakibara's blog</title>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width" />
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <meta name="generator" content={Astro.generator} />
+      <title>sakakibara's blog</title>
 	</head>
-	<body>
-      <Header />
-		<slot />
-	</body>
+    <body>
+      <ThemeProvider client:load>
+        <Header client:load />
+        <slot />
+      </ThemeProvider>
+    </body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style is:global>
+    @charset "utf-8";
+    :root {
+      --large-size: 1024px;
+      --midium-size: 768px;
+      --small-size: 480px;
+
+      --main-bg-color: rgb(20% 20% 50%);
+      --font-color: rgb(100% 100% 100%);
+      --link-font-color: rgb(100% 100% 100%);
+      --visited-font-color: rgb(34 139 34);
+    }
+
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .dark-theme {
+      --main-bg-color: rgb(20% 50% 50%);
+      --font-color: rgb(51 51 51);
+    }
+
+    .light-theme {
+      --main-bg-color: rgb(90% 90% 90%);
+      --font-color: rgb(0 0 0);
+    }
+
+    .theme-container {
+      background: var(--main-bg-color);
+      color: var(--font-color);
+    }
+
+    a:link {
+      color: var(--link-font-color);
+    }
+    a:visited {
+      color: var(--visited-font-color);
+    }
+
+  /* @media screen and (min-width: var(--large-size)) { */
+  /**/
+  /* } */
+  /* @media screen and (min-width: var(--midium-size)) { */
+  /**/
+  /* } */
 </style>
