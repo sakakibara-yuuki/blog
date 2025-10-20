@@ -1,7 +1,6 @@
 ---
 import { Header } from '@layouts/Header'
-import { Theme, useThemeContext, ThemeProvider } from '@components/ThemeContext'
-const theme = useThemeContext()
+import { ThemeProvider } from '@components/ThemeContext'
 ---
 
 <!doctype html>
@@ -14,11 +13,9 @@ const theme = useThemeContext()
 		<title>sakakibara's blog</title>
 	</head>
 	<body>
-      <ThemeProvider theme={theme}>
-        <div classList={{ "dark": theme == Theme.dark, "light": theme == Theme.light }}>
-          <Header client:load />
-          <slot />
-        </div>
+      <ThemeProvider>
+        <Header />
+        <slot />
       </ThemeProvider>
 	</body>
 </html>
@@ -42,6 +39,14 @@ const theme = useThemeContext()
       height: 100%;
       background: var(--main-bg-color);
       color: var(--font-color);
+    }
+    html[data-theme='dark'] {
+      --main-bg-color: rgb(240 240 240);
+      --font-color: rgb(51 51 51);
+    }
+    html[data-theme='light'] {
+      --main-bg-color: rgb(20 20 20);
+      --font-color: rgb(0 0 0);
     }
     a:link {
       color: var(--link-font-color);
