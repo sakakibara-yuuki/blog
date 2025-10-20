@@ -1,0 +1,15 @@
+/*
+ * Theme.css
+ * Copyright (C) 2025 sakakibara
+ *
+ * Distributed under terms of the MIT license.
+ */
+
+.dark--theme {
+  color: rgb(0% 0% 100%)
+}
+
+.light--theme {
+  color: rgb(100% 0% 0%)
+}
+

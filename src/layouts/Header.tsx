@@ -1,7 +1,5 @@
-import { createSignal } from 'solid-js';
+// --- Button
 import { type ParentComponent, children } from 'solid-js';
-import { createContext, useContext } from 'solid-js';
-
 
 const Button: ParentComponent<{ onClick?: () => void }> = (props) => {
   const safeChildren = children(() => props.children);
@@ -12,32 +10,21 @@ const Button: ParentComponent<{ onClick?: () => void }> = (props) => {
   )
 }
 
-enum Theme {
-  dark = "dark",
-  light = "light",
-  system = "system",
-}
-
-export const ThemeContext = createContext<Theme>(Theme.dark)
-
-export const ThemeProvider: ParentComponent = (props) => {
-
-  const theme = useContext(ThemeContext)
-
-  return (
-    <ThemeContext.Provider value={theme}>
-      {props.children}
-    </ThemeContext.Provider>
-  )
-}
+// --- Header
+import { createSignal } from 'solid-js';
+import { Theme, ThemeProvider, useThemeContext } from '@components/ThemeContext';
 
 export const Header = () => {
 
-  const [theme, setTheme] = createSignal<Theme>(Theme.dark);
+  const initTheme = useThemeContext()
+  const [theme, setTheme] = createSignal<Theme>(initTheme);
+  const toggleTheme = () => setTheme(theme() == Theme.dark ? Theme.light : Theme.dark)
 
   return (
-    <div>
-      <Button onClick={() => setTheme(theme() == Theme.dark ? Theme.light : Theme.dark)}>{theme()}</Button>
+    <div classList={{ "dark": theme() == Theme.dark, "light": theme() == Theme.light }}>
+      <ThemeProvider theme={theme()}>
+        <Button onClick={toggleTheme}>{theme()}</Button>
+      </ThemeProvider>
     </div>
   )
 }

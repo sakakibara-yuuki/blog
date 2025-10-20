@@ -1,5 +1,6 @@
 ---
 import { Header } from '@layouts/Header'
+import { Theme, ThemeContext, useThemeContext } from '@components/ThemeContext'
 ---
 
 <!doctype html>
@@ -12,8 +13,10 @@ import { Header } from '@layouts/Header'
 		<title>sakakibara's blog</title>
 	</head>
 	<body>
-      <Header />
-		<slot />
+      <div classList={{ "dark": useThemeContext() == Theme.dark, "light": useThemeContext() == Theme.light }}>
+        <Header client:load />
+        <slot />
+      </div>
 	</body>
 </html>
 
