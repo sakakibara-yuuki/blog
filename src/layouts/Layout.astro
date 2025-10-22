@@ -15,6 +15,24 @@ import { ThemeProvider } from '@components/ThemeProvider'
     <body>
       <ThemeProvider client:load>
         <Header client:load />
+        <div class="primary-box">
+          <p>primary box</p>
+        </div>
+        <div class="secondary-box">
+          <p>secondary box</p>
+        </div>
+        <div class="tartiary-box">
+          <p>tartiary box</p>
+        </div>
+        <div class="success-box">
+          <p>success box</p>
+        </div>
+        <div class="error-box">
+          <p>error box</p>
+        </div>
+        <div class="warning-box">
+          <p>warning box</p>
+        </div>
         <slot />
       </ThemeProvider>
     </body>
@@ -23,14 +41,13 @@ import { ThemeProvider } from '@components/ThemeProvider'
 <style is:global>
     @charset "utf-8";
     :root {
-      --large-size: 1024px;
-      --midium-size: 768px;
       --small-size: 480px;
+      --midium-size: 768px;
+      --large-size: 1024px;
 
-      --main-bg-color: rgb(20% 20% 50%);
-      --font-color: rgb(100% 100% 100%);
-      --link-font-color: rgb(100% 100% 100%);
-      --visited-font-color: rgb(34 139 34);
+      --small-font: 1rem;
+      --midium-font: 1.5rem;
+      --large-font: 1.75rem;
     }
 
     body {
@@ -40,25 +57,91 @@ import { ThemeProvider } from '@components/ThemeProvider'
     }
 
     .dark-theme {
-      --main-bg-color: rgb(20% 50% 50%);
-      --font-color: rgb(51 51 51);
+      --primary: hsl(233 80 28);
+      --secondary: hsl(from var(--primary) h s calc(l + 10));
+      --tertiary: hsl(from var(--primary) h s calc(l - 10));
+      --background: hsl(from var(--primary) h s 10);
+
+      --on-primary: hsl(from var(--primary) h 10 calc(l + 70));
+      --on-secondary: hsl(from var(--secondary) h 10 calc(l + 70));
+      --on-tertiary: hsl(from var(--tertiary) h 10 calc(l + 70));
+      --on-background: hsl(from var(--background) h 10 calc(l + 70));
+
+      --success: hsl(from var(--secondary) calc(h - 120) s 30);
+      --error: hsl(from var(--secondary) calc(h + 120) s 30);
+      --warning: hsl(from var(--secondary) calc(h - 180) s 30);
+
+      --on-success: hsl(from var(--success) h 10 90);
+      --on-error: hsl(from var(--error) h 10 90);
+      --on-warning: hsl(from var(--warning) h 10 90);
     }
 
     .light-theme {
-      --main-bg-color: rgb(90% 90% 90%);
-      --font-color: rgb(0 0 0);
+      --primary: hsl(233 100 28);
+      --secondary: hsl(from var(--primary) h s calc(l + 10));
+      --tertiary: hsl(from var(--primary) h s calc(l - 10));
+      --background: hsl(from var(--primary) h s 80);
+
+      --on-primary: hsl(from var(--primary) h 10 calc(l + 70));
+      --on-secondary: hsl(from var(--secondary) h 10 calc(l + 70));
+      --on-tertiary: hsl(from var(--tertiary) h 10 calc(l + 70));
+
+      --success: hsl(from var(--secondary) calc(h - 120) s 70);
+      --error: hsl(from var(--secondary) calc(h + 120) s 70);
+      --warning: hsl(from var(--secondary) calc(h - 180) s 70);
+
+      --on-success: hsl(from var(--success) h s 10);
+      --on-error: hsl(from var(--error) h s 10);
+      --on-warning: hsl(from var(--warning) h s 10);
     }
 
     .theme-container {
-      background: var(--main-bg-color);
-      color: var(--font-color);
+      background: var(--background);
+      color: var(--on-background);
     }
 
     a:link {
-      color: var(--link-font-color);
+      color: var(--on-background);
     }
     a:visited {
-      color: var(--visited-font-color);
+      color: var(--on-background);
+    }
+
+    .primary-box {
+      background: var(--primary);
+      color: var(--on-primary);
+      height: 3rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .secondary-box {
+      background: var(--secondary);
+      color: var(--on-secondary);
+      height: 3rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .tartiary-box {
+      background: var(--tertiary);
+      color: var(--on-tertiary);
+      height: 3rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .success-box {
+      background: var(--success);
+      color: var(--on-success);
+      height: 3rem;
+    }
+    .error-box {
+      background: var(--error);
+      color: var(--on-error);
+      height: 3rem;
+    }
+    .warning-box {
+      background: var(--warning);
+      color: var(--on-warning);
+      height: 3rem;
     }
 
   /* @media screen and (min-width: var(--large-size)) { */
