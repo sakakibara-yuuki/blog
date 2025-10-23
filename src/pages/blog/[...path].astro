@@ -1,5 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import { Blog } from '@layouts/Blog'; 
 import { type CollectionEntry, getCollection, getEntry, render } from 'astro:content'
 
 type Props = {
@@ -25,13 +26,7 @@ const { Content, headings } = await render(entry);
 ---
 
 <Layout>
-  <div class="page__container">
+  <Blog>
     <Content />
-  </div>
+  </Blog>
 </Layout>
-
-<style>
-  .page__container {
-    padding: 40px 40px;
-  }
-</style>
