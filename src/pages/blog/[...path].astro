@@ -25,6 +25,13 @@ const { Content, headings } = await render(entry);
 ---
 
 <Layout>
-  <Content />
+  <div class="page__container">
+    <Content />
+  </div>
 </Layout>
 
+<style>
+  .page__container {
+    padding: 40px 40px;
+  }
+</style>
