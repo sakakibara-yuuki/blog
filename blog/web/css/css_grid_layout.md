@@ -517,9 +517,9 @@ item2は`justify-self: center`が指定されているため, 横方向の中央
 #### align-items
 一斉にalign-selfをする。
 
-## justiry-content, align-content
+## justify-content, align-content
 
-justiry-content, align-content, justiry-items, align-items はコンテナとしての役割を持つタグに対して適用するべきプロパティである。
+justify-content, align-content, justify-items, align-items はコンテナとしての役割を持つタグに対して適用するべきプロパティである。
 
 ## テンプレート
 
