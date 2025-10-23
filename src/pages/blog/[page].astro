@@ -24,11 +24,11 @@ const { page } = Astro.props;
       ))}
     </ul>
     <div class="pagination">
-      <div><a href=`${page.url.first}`> first </a></div>
-      <div><a href=`${page.url.prev}`> prev </a></div>
-      <div><a href=`${page.url.current}`> current </a></div>
-      <div><a href=`${page.url.next}`> next </a></div>
-      <div><a href=`${page.url.last}`> last </a></div>
+      { page.url.first && <div><a href=`${page.url.first}`> first </a></div> }
+      { page.url.prev && <div><a href=`${page.url.prev}`> prev </a></div> }
+      { page.url.current && <div><a href=`${page.url.current}`> current </a></div> }
+      { page.url.next && <div><a href=`${page.url.next}`> next </a></div> }
+      { page.url.last && <div><a href=`${page.url.last}`> last </a></div> }
     </div>
   </div>
 
