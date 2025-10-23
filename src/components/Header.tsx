@@ -15,7 +15,7 @@ export const Header = () => {
   return (
     <header>
       <div class="icon">
-        This is good icon
+        some icon
       </div>
       <Search />
       <nav>

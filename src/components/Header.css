@@ -18,12 +18,22 @@ header {
 }
 
 .icon {
-  border: solid;
+  border: solid var(--on-primary);
+  text-align: center;
+  color: transparent;
 }
+
 
 nav {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: end;
   border: solid;
+}
+
+nav button {
+  border: 3px solid var(--on-primary);
+  border-radius: 0;
+  background: transparent;
+  color: var(--on-primary);
 }

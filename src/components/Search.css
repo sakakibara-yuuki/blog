@@ -19,6 +19,16 @@
   max-width: 15rem;
   line-height: 1.25rem;
   vertical-align: baseline;
+  background: var(--tertiary);
+  color: var(--on-tertiary);
+  border: 0;
+}
+
+.search button {
+  border: 1px solid var(--on-primary);
+  border-radius: 0;
+  background: transparent;
+  color: var(--on-primary);
 }
 
 /* .button__search > *{ */
