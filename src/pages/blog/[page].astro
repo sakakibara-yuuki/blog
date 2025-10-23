@@ -41,16 +41,23 @@ const { page } = Astro.props;
     padding: 40px 40px;
   }
 
-  .pages {
+  .pages ul {
     display: grid;
-    grid-template-columns: 2fr 8fr 2fr;
+    justify-items: start;
   }
 
-  .pages ul {
-    grid-column: 2;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: start;
+  @media screen and (width >= 768px) {
+
+    .pages {
+      display: grid;
+      grid-template-columns: 2fr 8fr 2fr;
+    }
+
+    .pages ul {
+      grid-column: 2;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
   }
 
   .pages ul > * {
