@@ -478,7 +478,48 @@ item2はitem1の下に配置される.
 item2は`justify-self: center`が指定されているため, 横方向の中央に配置される.
 
 
+## justify-content, self, items
+#### justify-content
+フレックスコンテナなら主軸、グリッドならインライン軸に沿って内容(content)を調整する。
 
+主軸は`flex-direction`で指定されている方向、
+インライン軸はインライン要素が積まれる方向、日本語や英語なら左から右。
+ブロック軸はブロック要素が積まれる方向、日本語や英語なら上から下である。
+
+日本語、英語の場合、左から右への軸でcontentを刺し、その方向でcontent同士を調整するというイメージである。
+
+#### justify-self
+各content内の単一のitemに対して指定される。
+
+フレックスボックスレイアウトなら無視される。
+グリッドレイアウトならインライン軸(左から右)
+
+日本語、英語の場合、左から右への軸でcontentを刺し、その方向でcontent内でのitemの位置を調整するというイメージである。
+
+#### justify-items
+一斉にjustify-selfをする。
+
+
+## align-content, self, items
+#### align-content
+フレックスボックスの交差軸、グリッドならブロック軸に沿って内容(content)を整列する。
+
+日本語、英語の場合、上から下への軸でcontentを刺し、その方向でcontent同士を整列するというイメージである。
+
+#### align-self
+各content内の単一のitemに対して指定される。
+
+フレックスボックスの交差軸のmarginが`margin: auto`なら無視される。
+グリッドレイアウトならインライン軸(左から右)
+
+日本語、英語の場合、上から下への軸でcontentを刺し、その方向でcontent内でのitemの位置を整列するというイメージである。
+
+#### align-items
+一斉にalign-selfをする。
+
+## justiry-content, align-content
+
+justiry-content, align-content, justiry-items, align-items はコンテナとしての役割を持つタグに対して適用するべきプロパティである。
 
 ## テンプレート
 
