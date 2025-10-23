@@ -59,9 +59,13 @@ $(r, g, b)$では実用的ではないので別の形式へ変換したい。で
 
 $x^3=1$の解をそれぞれ、$1, \omega, \bar{\omega}$とする。
 そして、以下のような変換を考える。
+
 $$
-\phi : RGB \to \mathbb{C}
-\phi : (r, g, b) \mapsto r + g\omega + b\bar{\omega}
+\begin{array}{rccc}
+\phi \colon & RGB   &\longrightarrow   &\mathbb{C} \\
+     & \in          &                  &\in \\
+     & (r, g, b)    &\longmapsto       &r + g\omega + b\bar{\omega}
+\end{array}
 $$
 
 この変換はRGB空間の元をそのまま$\mathbb{C}$へ写さない。
@@ -69,11 +73,13 @@ $$
 しかし、この写像$\phi$は全射であり、明らかに線形写像である。
 
 次元定理より
+
 $$
-\dim (RGB) = \dim (Im(\phi)) + \dir (Ker(\phi))
+\dim (RGB) = \dim (Im(\phi)) + \dim (Ker(\phi))
 $$
+
 である。
-$\dim (RGB) = 3$, $\dim (Im(\phi)) = 2$ であるため、$\dim (Ker(\phi)) = 1$となる。
+$\dim (RGB) = 3, \dim (Im(\phi)) = 2$ であるため、$\dim (Ker(\phi)) = 1$となる。
 
 ところで、
 $$
@@ -127,6 +133,7 @@ $\phi$円筒モデルで$l$の高さを固定とし、$Im(\phi)$の円盤を取�
 - 明度
 - 彩度
 - 色相
+
 に注目するという話は既にしたと思う。
 
 明度を固定して、近しい彩度、色相を集めたものを**トーン**というらしいが、これはほとんど色相環である。
