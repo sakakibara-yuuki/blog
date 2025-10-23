@@ -63,7 +63,6 @@ $x^3=1$の解をそれぞれ、$1, \omega, \bar{\omega}$とする。
 $$
 \begin{array}{rccc}
 \phi \colon & RGB   &\longrightarrow   &\mathbb{C} \\
-     & \in          &                  &\in \\
      & (r, g, b)    &\longmapsto       &r + g\omega + b\bar{\omega}
 \end{array}
 $$
@@ -75,21 +74,21 @@ $$
 次元定理より
 
 $$
-\dim (RGB) = \dim (Im(\phi)) + \dim (Ker(\phi))
+\dim (RGB) = \dim (\mathrm{Im}(\phi)) + \dim (\mathrm{Ker}(\phi))
 $$
 
 である。
-$\dim (RGB) = 3, \dim (Im(\phi)) = 2$ であるため、$\dim (Ker(\phi)) = 1$となる。
+$\dim (RGB) = 3, \dim (\mathrm{Im}(\phi)) = 2$ であるため、$\dim (\mathrm{Ker}(\phi)) = 1$となる。
 
 ところで、
 $$
 1 + \omega + \bar{\omega} = 0
 $$
-であることから、明らかに$(1, 1, 1) \in Ker(\phi)$である。
-このこと、$\dim (Ker(\phi)) = 1$であることから、
-$Ker(\phi) = \set{ (l, l, l) | l \in \mathbb{Z} }$である。
-つまり、灰色や黒、白などの無彩色が$Ker(\phi)$に属する。
-$Ker(\phi)$に属する元を**無彩色ベクトル**と呼ぼう。
+であることから、明らかに$(1, 1, 1) \in \mathrm{Ker}(\phi)$である。
+このこと、$\dim (\mathrm{Ker}(\phi)) = 1$であることから、
+$\mathrm{Ker}(\phi) = \set{ (l, l, l) | l \in \mathbb{Z} }$である。
+つまり、灰色や黒、白などの無彩色が$\mathrm{Ker}(\phi)$に属する。
+$\mathrm{Ker}(\phi)$に属する元を**無彩色ベクトル**と呼ぼう。
 
 これによって、RGB空間から新しい表現への変換$d\otimes \phi$が得られる。
 $$
@@ -98,9 +97,9 @@ $$
 
 実際にやってみよう。
 $\bm{a} = (r, g, b)$ とする。
-$Ker(\phi)$の標準基底として$\bm{l}_e = (1/3, 1/3, 1/3)$を取る。
+$\mathrm{Ker}(\phi)$の標準基底として$\bm{l}_e = (1/3, 1/3, 1/3)$を取る。
 $\bm{a}$を$\bm{l}_e$でグラムシュミットして$\bm{a} - (\bm{a}\cdot\bm{l}_e)\bm{l}_e$を得る。
-$(\bm{a}\cdot\bm{l}_e)\bm{l}_e \in Ker(\phi)$なので、
+$(\bm{a}\cdot\bm{l}_e)\bm{l}_e \in \mathrm{Ker}(\phi)$なので、
 $$
 (d\otimes \phi)(\bm{a}) = (\bm{a}\cdot\bm{l}_e, \phi(\bm{a}))
 $$
@@ -117,13 +116,13 @@ $$
 $l$は**明度**、$s$は**彩度**、$h$を**色相**と呼ぶ。
 
 以上により、明度、彩度、色相を表現する(使いやすい？)空間を構成することができた。
-ここでは便宜的に$Ker(\phi)\times Im(\phi)$を$\phi$空間と呼ぶことにしよう。
+ここでは便宜的に$\mathrm{Ker}(\phi)\times \mathrm{Im}(\phi)$を$\phi$空間と呼ぶことにしよう。
 
 $l$を軸に$(s, h)$の円盤を考えた円筒形のモデルが頭に浮かぶだろうか。
-$Ker(\phi)$が高さで$Im(\phi)$の円盤を底辺とする円筒である。
+$\mathrm{Ker}(\phi)$が高さで$\mathrm{Im}(\phi)$の円盤を底辺とする円筒である。
 これを$\phi$円筒モデルとよぶことにしよう。
 
-$\phi$円筒モデルで$l$の高さを固定とし、$Im(\phi)$の円盤を取り出す。
+$\phi$円筒モデルで$l$の高さを固定とし、$\mathrm{Im}(\phi)$の円盤を取り出す。
 そこで、そこから$s$を固定すると、円を得る。
 これを**色相環**と呼ぶ。
 
