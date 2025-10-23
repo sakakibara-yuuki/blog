@@ -18,11 +18,13 @@ const { page } = Astro.props;
       <div>{page.size} / {page.total}</div>
       <div>{page.currentPage} / {page.lastPage}</div>
     </div>
-    <ul>
-      {page.data.map(blog => (
-        <li><a href=`${blog.id}`>{blog.data.title}</a></li>
-      ))}
-    </ul>
+    <div class="pages">
+      <ul>
+        {page.data.map(blog => (
+          <li><a href=`${blog.id}`>{blog.data.title}</a></li>
+        ))}
+      </ul>
+    </div>
     <div class="pagination">
       { page.url.first && <div><a href=`${page.url.first}`> first </a></div> }
       { page.url.prev && <div><a href=`${page.url.prev}`> prev </a></div> }
@@ -37,6 +39,22 @@ const { page } = Astro.props;
 <style>
   .pages__container {
     padding: 40px 40px;
+  }
+
+  .pages {
+    display: grid;
+    grid-template-columns: 2fr 8fr 2fr;
+  }
+
+  .pages ul {
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: start;
+  }
+
+  .pages ul > * {
+    margin: 0.25rem 1rem;
   }
 
   .pagination {
