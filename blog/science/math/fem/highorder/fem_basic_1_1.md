@@ -51,7 +51,7 @@ $\bm{H}(\mathrm{div})$は発散が$d$次元$L^2$上ベクトル空間に含ま�
 有限要素$\kappa=(K, P, \Sigma)$がunisolvency(一意解決)とは$\Sigma$の自由度と$P$の基底関数の関係を表す概念である。  
 以下を充たすとき、有限要素$\kappa=(K, P, \Sigma)$は**unisolvency(一意解決)** であるという。
 $$
-\forall g \in P, \\
+\forall g \in P,
 L_1(g) = L_2(g) = \ldots = L_{N_P}(g) = 0 \implies g = 0
 $$
 言い換えると、$L_i (i = 1, 2,\ldots, N_P)$を要素にもつベクトル
@@ -72,7 +72,7 @@ $$
 有限要素がunisolvencyであることと、その有限要素がもつ多項式空間$P$が$\delta$-propertyを持つことについては以下の重要な命題が成り立つ。  
 有限要素$\kappa=(K, P, \Sigma)$について、
 $$
-\text{有限要素$\kappa$がunisolvencyである} \iff \\
+\text{有限要素$\kappa$がunisolvencyである} \iff
 \text{$\delta$-propertyを持つ基底$\mathcal{B} = \{\theta_1, \theta_2, \ldots, \theta_{N_P}\} \in P$が唯一つ存在する}
 $$
 
