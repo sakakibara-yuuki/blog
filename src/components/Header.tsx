@@ -1,5 +1,6 @@
 import "./Header.css"
 import { Button } from '@components/Button';
+import { Search } from  '@components/Search';
 import { useStore } from '@nanostores/solid';
 import { Theme, theme } from '@store/theme';
 
@@ -16,16 +17,10 @@ export const Header = () => {
       <div class="icon">
         This is good icon
       </div>
-      <div class="search">
-        good search bar
-      </div>
+      <Search />
       <nav>
-        <div class="button__theme">
-          <Button onClick={toggleTheme}>{$theme()}</Button>
-        </div>
-        <div class="button__menu">
-          <Button onClick={toggleTheme}>{$theme()}</Button>
-        </div>
+        <Button onClick={toggleTheme}>{$theme()}</Button>
+        <Button onClick={toggleTheme}>menu</Button>
       </nav>
     </header>
   )
