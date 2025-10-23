@@ -11,23 +11,63 @@ const { page } = Astro.props;
 ---
 
 <Layout>
-  <a href="/">home</a>
+  <!-- <a href="/">home</a> -->
 
-  <div>
-    <div>{page.size} / {page.total}</div>
-    <div>{page.currentPage} / {page.lastPage}</div>
-  </div>
-  <ul>
-    {page.data.map(blog => (
-      <li><a href=`${blog.id}`>{blog.data.title}</a></li>
-    ))}
-  </ul>
-  <div>
-    <div><a href=`${page.url.first}`> first </a></div>
-    <div><a href=`${page.url.prev}`> prev </a></div>
-    <div><a href=`${page.url.current}`> current </a></div>
-    <div><a href=`${page.url.next}`> next </a></div>
-    <div><a href=`${page.url.last}`> last </a></div>
+  <div class="pages__container">
+    <div>
+      <div>{page.size} / {page.total}</div>
+      <div>{page.currentPage} / {page.lastPage}</div>
+    </div>
+    <div class="pages">
+      <ul>
+        {page.data.map(blog => (
+          <li><a href=`${blog.id}`>{blog.data.title}</a></li>
+        ))}
+      </ul>
+    </div>
+    <div class="pagination">
+      { page.url.first && <div><a href=`${page.url.first}`> first </a></div> }
+      { page.url.prev && <div><a href=`${page.url.prev}`> prev </a></div> }
+      { page.url.current && <div><a href=`${page.url.current}`> current </a></div> }
+      { page.url.next && <div><a href=`${page.url.next}`> next </a></div> }
+      { page.url.last && <div><a href=`${page.url.last}`> last </a></div> }
+    </div>
   </div>
 
 </Layout>
+
+<style>
+  .pages__container {
+    padding: 40px 40px;
+  }
+
+  .pages ul {
+    display: grid;
+    justify-items: start;
+  }
+
+  @media screen and (width >= 768px) {
+
+    .pages {
+      display: grid;
+      grid-template-columns: 2fr 8fr 2fr;
+    }
+
+    .pages ul {
+      grid-column: 2;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+  }
+
+  .pages ul > * {
+    margin: 0.25rem 1rem;
+  }
+
+  .pagination {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin: 40px;
+    justify-items: center;
+  }
+</style>

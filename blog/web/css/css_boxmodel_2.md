@@ -112,3 +112,150 @@ block要素に`overflow: auto`を指定することでblock要素にスクロー
 `max-content`は改行を除けるだけ除いた幅のサイズになる.
 
 これらを高さに適用した場合は`auto`と同じ挙動になる.
+
+## 具体例
+よくある間違いだが、
+```html
+<div class="parent" style="height: auto">
+    Here is a parent block.
+    <div class="child" style="height: 100%">
+        Here is a child block.
+    </div>
+</div>
+```
+これだと思った通りに動かないことがある。というのもparentはコンテンツによって高さが決まるのに対して、childは親の高さによって高さが決まるからだ。
+
+次に、一見`height: 100%`が`height: auto`のように見える例について説明しよう。
+
+```html
+<div class="html" style="background: var(--tertiary); height: 6rem">
+    This is html.
+    <div class="parent" style="background: var(--primary); height: 100%">
+        Here is a parent block.
+        <div class="child" style="background: var(--secondary)">
+            Here is a child block.
+        </div>
+    </div>
+</div>
+```
+このhtmlは以下のように描画される。
+
+<div class="html" style="background: var(--tertiary); height: 6rem; margin: 2rem">
+    This is html.
+    <div class="parent" style="background: var(--primary); height: 100%">
+        Here is a parent block.
+        <div class="child" style="background: var(--secondary)">
+            Here is a child block.
+        </div>
+    </div>
+</div>
+
+htmlの高さを固定値とする。
+そこで、parentのheightを100%とするとparentはhtmlの高さを目一杯使う。
+
+ここでさらに、childに要素を追加してみる。
+
+<div class="html" style="background: var(--tertiary); height: 6rem; margin: 2rem">
+    This is html.
+    <div class="parent" style="background: var(--primary); height: 100%">
+        Here is a parent block.
+        <div class="child" style="background: var(--secondary)">
+            1. Here is a child block.<br>
+            2. Here is a child block.<br>
+            3. Here is a child block.<br>
+            4. Here is a child block.<br>
+            5. Here is a child block.<br>
+        </div>
+    </div>
+</div>
+
+<br>
+
+するとどうだろう。子の拡張に引きずられるようにして親の高さも拡張される。
+これはあたかも親のブロックが`height: 100%`からから`height: auto`へ変更されたかのようだ。
+実際には`height: 100%`から直接`height: auto`へ書き換わっているのではないが、
+子の内容に合わせて親の高さを伸ばすという特例として扱われ、それはparentからhtmlへ伝搬する。
+
+この処理は**ブロックレベル要素の高さはコンテンツによって決定される**という原則が根拠になっている。
+これはスクロールを可能にするために必要な処理である。
+
+そして注意すべきが以下の例である。
+
+```html
+<div class="html" style="background: var(--tertiary); height: 6rem">
+    This is html.
+    <div class="parent" style="background: var(--primary); height: 100%">
+        Here is a parent block.
+        <div class="child" style="background: var(--secondary); height: 100%">
+            1. Here is a child block.<br>
+            2. Here is a child block.<br>
+            3. Here is a child block.<br>
+            4. Here is a child block.<br>
+            5. Here is a child block.<br>
+        </div>
+    </div>
+</div>
+```
+
+<div class="html" style="background: var(--tertiary); height: 6rem; margin: 2rem">
+    This is html.
+    <div class="parent" style="background: var(--primary); height: 100%">
+        Here is a parent block.
+        <div class="child" style="background: var(--secondary); height: 100%">
+            1. Here is a child block.<br>
+            2. Here is a child block.<br>
+            3. Here is a child block.<br>
+            4. Here is a child block.<br>
+            5. Here is a child block.<br>
+        </div>
+    </div>
+</div>
+
+
+<br>
+
+ここでは、先程の例とは異なりparentのheightを`height: 100%`としている。
+childの高さが`100%` = `6rem`のように固定化されているため、それ以上の拡張はされないのである。
+
+このように見ると当たり前かもしれないが、htmlの`height: 100%`としたとき混乱することがある。
+htmlは初期包含ブロック(Initial Containing Block, ICB)を親にもち、その`height`は通常、デバイスの高さ(100vh)に設定されている。
+そこで、上のようにchildの`height`を100%とすると、子の高さが固定化され、親の高さが子の高さに依存するという性質上、親の高さも`height`は100vhに固定化される。
+つまり、html, bodyの高さは100vhに固定化される。
+その結果スクロールはできるとしても、それはhtml, bodyをはみ出たものになる。
+
+これを回避し、かつ、childの高さをparentまで拡張する手段として
+
+```html
+<div class="html" style="background: var(--tertiary); height: 6rem; margin: 2rem">
+    This is html.
+    <div class="parent" style="background: var(--primary); height: 100%">
+        Here is a parent block.
+        <div class="child" style="background: var(--secondary); min-height: 100%">
+            1. Here is a child block.<br>
+        </div>
+    </div>
+</div>
+```
+
+とすればよい。
+
+<div class="html" style="background: var(--tertiary); height: 6rem; margin: 2rem">
+    This is html.
+    <div class="parent" style="background: var(--primary); height: 100%">
+        Here is a parent block.
+        <div class="child" style="background: var(--secondary); min-height: 100%">
+            1. Here is a child block.<br>
+        </div>
+    </div>
+</div>
+
+<br>
+
+こうすることによって、最小の高さとして親要素まで拡張することができる。
+さらに、`height`が固定化されていないのでその値は`auto`であり、コンテンツによって決まることから、childが追加された際にはその量に応じた分だけ自然に拡張することになる。
+
+おそらく[包含ブロックからのパーセント値の計算](https://developer.mozilla.org/ja/docs/Web/CSS/CSS_display/Containing_block#%E5%8C%85%E5%90%AB%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%81%8B%E3%82%89%E3%81%AE%E3%83%91%E3%83%BC%E3%82%BB%E3%83%B3%E3%83%88%E5%80%A4%E3%81%AE%E8%A8%88%E7%AE%97)にもっとまともなことが書いてある。
+
+- [Behaving as auto](https://drafts.csswg.org/css-sizing/#behave-auto)
+- [CSS2$10.5](https://www.w3.org/TR/CSS2/visudet.html#the-height-property)
+

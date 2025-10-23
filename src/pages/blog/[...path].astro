@@ -1,5 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import { Blog } from '@layouts/Blog'; 
 import { type CollectionEntry, getCollection, getEntry, render } from 'astro:content'
 
 type Props = {
@@ -25,8 +26,7 @@ const { Content, headings } = await render(entry);
 ---
 
 <Layout>
-  <div>{path}</div>
-  <div>This is a blog. {blog.data.title} </div>
-  <Content />
+  <Blog>
+    <Content />
+  </Blog>
 </Layout>
-
