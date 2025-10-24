@@ -13,17 +13,17 @@
   align-items: center;
 }
 
-input {
+.search input {
   width: 100%;
   line-height: 1.25rem;
   vertical-align: baseline;
   background: var(--tertiary);
   color: var(--on-tertiary);
   border: 0.125rem solid var(--on-primary);
-  padding-left: 0.75rem
+  padding-left: 0.75rem;
 }
 
-img {
+.search img {
   cursor: pointer;
   width: 32px;
 }

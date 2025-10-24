@@ -1,6 +1,7 @@
 import lightsvg from '@assets/light.svg?url';
 import darksvg from '@assets/dark.svg?url';
 import "./Header.css"
+import { Switch, Match } from 'solid-js';
 import { Button } from '@components/Button';
 import { Search } from  '@components/Search';
 import { useStore } from '@nanostores/solid';
