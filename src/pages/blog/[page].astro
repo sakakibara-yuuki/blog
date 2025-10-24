@@ -11,8 +11,6 @@ const { page } = Astro.props;
 ---
 
 <Layout>
-  <!-- <a href="/">home</a> -->
-
   <div class="pages__container">
     <div>
       <div>{page.size} / {page.total}</div>
@@ -26,11 +24,11 @@ const { page } = Astro.props;
       </ul>
     </div>
     <div class="pagination">
-      { page.url.first && <div><a href=`${page.url.first}`> first </a></div> }
-      { page.url.prev && <div><a href=`${page.url.prev}`> prev </a></div> }
-      { page.url.current && <div><a href=`${page.url.current}`> current </a></div> }
-      { page.url.next && <div><a href=`${page.url.next}`> next </a></div> }
-      { page.url.last && <div><a href=`${page.url.last}`> last </a></div> }
+      { page.url.first ? <div class="first"><a href=`${page.url.first}`> first </a></div> : <div class="first--disabled"> first </div> }
+      { page.url.prev ? <div class="prev"><a href=`${page.url.prev}`> prev </a></div> : <div class="prev--disabled"> prev </div>}
+      { page.url.current ? <div class="current"><a href=`${page.url.current}`> {page.currentPage} </a></div> : <div class="current--disabled"> no current </div>}
+      { page.url.next ? <div class="next"><a href=`${page.url.next}`> next </a></div> : <div class="next--disabled"> next </div>}
+      { page.url.last ? <div class="last"><a href=`${page.url.last}`> last </a></div> : <div class="last--disabled"> last </div>}
     </div>
   </div>
 
@@ -60,8 +58,12 @@ const { page } = Astro.props;
 
   }
 
-  .pages ul > * {
+  .pages li {
     margin: 0.25rem 1rem;
+  }
+
+  .pages a {
+    text-decoration: none;
   }
 
   .pagination {
@@ -70,4 +72,19 @@ const { page } = Astro.props;
     margin: 40px;
     justify-items: center;
   }
+
+  .pagination > * {
+    border: 0.125rem solid;
+    padding: 0 1rem;
+  }
+
+  .pagination a {
+    text-decoration: none;
+  }
+
+  .pagination .first--disabled, .prev--disabled, .next--disabled, .last--disabled {
+    color: hsl(from var(--on-primary) h s 40);
+  }
+
+
 </style>

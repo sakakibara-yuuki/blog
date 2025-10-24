@@ -167,7 +167,7 @@ $$
 \begin{aligned}
 \mathrm{rot}\bm{H} &= \bm{J}+\frac{\partial \bm{D}}{\partial t} \\
 \mathrm{rot}\mu^{-1}\bm{B} &= \bm{J}+\epsilon\frac{\partial \bm{E}}{\partial t} \\
-\mathrm{rot}\mu^{-1}\mathrm{rot}\bm{A} &= \bm{J}-\epsilon\frac{\partial^2 \bm{A}}{\partial t^2} + \epsilon\mathrm{grad}\frac{\partial^2 \phi}{\partial t^2} \\
+\mathrm{rot}\mu^{-1}\mathrm{rot}\bm{A} &= \bm{J}-\epsilon\frac{\partial^2 \bm{A}}{\partial t^2} + \epsilon\mathrm{grad}\frac{\partial^2 \phi}{\partial t^2}
 \end{aligned}
 $$
 これ以上の式変形は不要に複雑になるのでここで留めておこう。
@@ -179,7 +179,7 @@ $$
 $$
 \begin{aligned}
 \mathrm{rot}\mu^{-1}\mathrm{rot}\bm{A} &= \bm{J} \\
-\mathrm{rot}\mu^{-1}\mathrm{rot}\bm{A} &= -\sigma\frac{\partial \bm{A}}{\partial t} - \sigma\mathrm{grad}\frac{\partial \phi}{\partial t} + \bm{J}_ {source} \\
+\mathrm{rot}\mu^{-1}\mathrm{rot}\bm{A} &= -\sigma\frac{\partial \bm{A}}{\partial t} - \sigma\mathrm{grad}\frac{\partial \phi}{\partial t} + \bm{J}_ {source}
 \end{aligned}
 $$
 少し整理して
@@ -216,7 +216,7 @@ f(x_n)
 1 & x_1 & x_1^2 & \cdots & x_1^{n-1} \\
 1 & x_2 & x_2^2 & \cdots & x_2^{n-1} \\
 &&&\vdots& \\
-1 & x_{n-1} & x_{n-1}^2 & \cdots & x_{n-1}^{n-1} \\
+1 & x_{n-1} & x_{n-1}^2 & \cdots & x_{n-1}^{n-1}
 \end{pmatrix}
 
 \begin{pmatrix}
@@ -265,7 +265,7 @@ p(x_n)
 L_1(x_1) & 0 & \cdots & 0 \\
 0 & L_0(x_0) & \cdots & 0 \\
 \vdots&&&\vdots&\\
-0 & 0 & \cdots & L_{n}(x_n)\\
+0 & 0 & \cdots & L_{n}(x_n)
 \end{pmatrix}
 
 \begin{pmatrix}
@@ -438,7 +438,7 @@ $$
 \begin{pmatrix}
 \frac{\partial}{\partial\xi_1} \\
 \frac{\partial}{\partial\xi_2} \\
-\frac{\partial}{\partial\xi_3} \\
+\frac{\partial}{\partial\xi_3}
 \end{pmatrix}
 
 =
@@ -446,13 +446,13 @@ $$
 \begin{pmatrix}
 \partial_{\xi_1} \\
 \partial_{\xi_2} \\
-\partial_{\xi_3} \\
+\partial_{\xi_3}
 \end{pmatrix}
 ,
 \begin{pmatrix}
 \frac{\partial}{\partial x} \\
 \frac{\partial}{\partial y} \\
-\frac{\partial}{\partial z} \\
+\frac{\partial}{\partial z}
 \end{pmatrix}
 
 =
@@ -460,7 +460,7 @@ $$
 \begin{pmatrix}
 \partial_{x} \\
 \partial_{y} \\
-\partial_{z} \\
+\partial_{z}
 \end{pmatrix}
 $$
 とする。
@@ -468,19 +468,19 @@ $$
 \begin{pmatrix}
 \partial_{\xi_1} \\
 \partial_{\xi_2} \\
-\partial_{\xi_3} \\
+\partial_{\xi_3}
 \end{pmatrix}
 
 =
 \begin{pmatrix}
 \frac{\partial x}{\partial \xi_1} & \frac{\partial y}{\partial \xi_1} & \frac{\partial z}{\partial \xi_1} \\
 \frac{\partial x}{\partial \xi_2} & \frac{\partial y}{\partial \xi_2} & \frac{\partial z}{\partial \xi_2} \\
-\frac{\partial x}{\partial \xi_3} & \frac{\partial y}{\partial \xi_3} & \frac{\partial z}{\partial \xi_3} \\
+\frac{\partial x}{\partial \xi_3} & \frac{\partial y}{\partial \xi_3} & \frac{\partial z}{\partial \xi_3}
 \end{pmatrix}
 \begin{pmatrix}
 \partial_{x} \\
 \partial_{y} \\
-\partial_{z} \\
+\partial_{z}
 \end{pmatrix}
 $$
 ここで、行列
@@ -489,7 +489,7 @@ J =
 \begin{pmatrix}
 \frac{\partial x}{\partial \xi_1} & \frac{\partial y}{\partial \xi_1} & \frac{\partial z}{\partial \xi_1} \\
 \frac{\partial x}{\partial \xi_2} & \frac{\partial y}{\partial \xi_2} & \frac{\partial z}{\partial \xi_2} \\
-\frac{\partial x}{\partial \xi_3} & \frac{\partial y}{\partial \xi_3} & \frac{\partial z}{\partial \xi_3} \\
+\frac{\partial x}{\partial \xi_3} & \frac{\partial y}{\partial \xi_3} & \frac{\partial z}{\partial \xi_3}
 \end{pmatrix}
 $$
 とする。
@@ -501,7 +501,7 @@ $$
 & \mathrm{rot}\bm{N}_ e \cdot \mathrm{rot}\bm{N}_ {e'} \\
 & \bm{N}_ e \cdot \bm{N}_ {e'} \\
 & \nabla \omega_i \cdot \bm{N}_ e \\
-& \nabla \omega_i \cdot \nabla \omega_j \\
+& \nabla \omega_i \cdot \nabla \omega_j
 \end{aligned}
 $$
 ただし、以上での$\mathrm{rot}, \nabla$は全て$(x, y, z)$においての微分である。
@@ -514,7 +514,7 @@ $$
 &- \langle\nabla_{\xi} \omega_i \cdot \nabla_{\xi} \omega_{j'}\rangle\langle\nabla_{\xi} \omega_j \cdot \nabla_{\xi} \omega_{i'}\rangle \} \\
 \bm{N}^{x}_ e \cdot \bm{N}^{x}_ {e'} &= \langle \bm{N}^{\xi}_ e \cdot \bm{N}^{\xi}_ {e'} \rangle \\
 \nabla \omega_i \cdot \bm{N}_ e &= \langle\nabla_{\xi}\omega_i\cdot \bm{N}^{\xi}_ e\rangle \\
-\nabla \omega_i \cdot \nabla \omega_j &= \langle\nabla_{\xi}\omega_i\cdot\nabla_{\xi}\omega_j\rangle \\
+\nabla \omega_i \cdot \nabla \omega_j &= \langle\nabla_{\xi}\omega_i\cdot\nabla_{\xi}\omega_j\rangle
 \end{align}
 $$
 となる。
@@ -534,7 +534,7 @@ $$
 \mathrm{rot}\bm{N}_ e \cdot \mathrm{rot}\bm{N}_ {e'} &= 2(\nabla \omega_i \times \nabla \omega_j)\cdot 2(\nabla \omega_{i'} \times \nabla \omega_{j'}) \\
 &= 4(\nabla \omega_i \times \nabla \omega_j)\cdot (\nabla \omega_{i'} \times \nabla \omega_{j'}) \\
 &= 4\{(\nabla \omega_i \cdot \nabla \omega_{i'})(\nabla \omega_j \cdot \nabla \omega_{j'}) - (\nabla \omega_i \cdot \nabla \omega_{j'})(\nabla \omega_j \cdot \nabla \omega_{i'}) \} \\
-&= 4\{(\nabla \omega_i \cdot \nabla \omega_{i'})(\nabla \omega_j \cdot \nabla \omega_{j'}) - (\nabla \omega_i \cdot \nabla \omega_{j'})(\nabla \omega_j \cdot \nabla \omega_{i'}) \} \\
+&= 4\{(\nabla \omega_i \cdot \nabla \omega_{i'})(\nabla \omega_j \cdot \nabla \omega_{j'}) - (\nabla \omega_i \cdot \nabla \omega_{j'})(\nabla \omega_j \cdot \nabla \omega_{i'}) \}
 \end{aligned}
 $$
 ここで、係数を無視した以下を考える。また、$\nabla = J^{-1}\nabla_{\xi}$であり、
@@ -544,7 +544,7 @@ $$
 & = (J^{-1}\nabla_{\xi}\omega_i)^T(J^{-1}\nabla_{\xi}\omega_j) \\
 & = (\nabla_{\xi}\omega_i)^T(J^{-T}J^{-1})\nabla_{\xi}\omega_j \\
 & = (\nabla_{\xi}\omega_i)^T(JJ^{T})^{-1}\nabla_{\xi}\omega_j \\
-& = (\nabla_{\xi}\omega_i)^Tg^{-1}\nabla_{\xi}\omega_j \\
+& = (\nabla_{\xi}\omega_i)^Tg^{-1}\nabla_{\xi}\omega_j
 \end{aligned}
 $$
 ここで、$g = JJ^{T}$とする。
@@ -555,7 +555,7 @@ $$
 (\nabla \omega_i \times \nabla \omega_j)\cdot (\nabla \omega_{i'} \times \nabla \omega_{j'}) &= (\nabla \omega_i \cdot \nabla \omega_{i'})(\nabla \omega_j \cdot \nabla \omega_{j'}) \\
 &- (\nabla \omega_i \cdot \nabla \omega_{j'})(\nabla \omega_j \cdot \nabla \omega_{i'}) \\
 &= \langle\nabla_{\xi} \omega_i \cdot \nabla_{\xi} \omega_{i'}\rangle\langle\nabla_{\xi} \omega_j \cdot \nabla_{\xi} \omega_{j'}\rangle \\
-&- \langle\nabla_{\xi} \omega_i \cdot \nabla_{\xi} \omega_{j'}\rangle\langle\nabla_{\xi} \omega_j \cdot \nabla_{\xi} \omega_{i'}\rangle \\
+&- \langle\nabla_{\xi} \omega_i \cdot \nabla_{\xi} \omega_{j'}\rangle\langle\nabla_{\xi} \omega_j \cdot \nabla_{\xi} \omega_{i'}\rangle
 \end{aligned}
 $$
 よって、
@@ -596,7 +596,7 @@ $$
 &= (\nabla_{\xi}\omega_i)^{T}J^{-T}J^{-1}\bm{N}^{\xi}_ e \\
 &= (\nabla_{\xi}\omega_i)^{T}(JJ^{T})^{-1}\bm{N}^{\xi}_ e \\
 &= (\nabla_{\xi}\omega_i)^{T}g^{-1}\bm{N}^{\xi}_ e \\
-&= \langle\nabla_{\xi}\omega_i\cdot \bm{N}^{\xi}_ e\rangle \\
+&= \langle\nabla_{\xi}\omega_i\cdot \bm{N}^{\xi}_ e\rangle
 \end{aligned}
 $$
 ### $\nabla \omega_i \cdot \nabla \omega_j$
@@ -607,7 +607,7 @@ $$
 &= (\nabla_{\xi}\omega_i)^{T}J^{-T}J^{-1}\nabla_{\xi}\omega_j \\
 &= (\nabla_{\xi}\omega_i)^{T}(JJ^{T})^{-1}\nabla_{\xi}\omega_j \\
 &= (\nabla_{\xi}\omega_i)^{T}g^{-1}\nabla_{\xi}\omega_j \\
-&= \langle\nabla_{\xi}\omega_i\cdot\nabla_{\xi}\omega_j\rangle \\
+&= \langle\nabla_{\xi}\omega_i\cdot\nabla_{\xi}\omega_j\rangle
 \end{aligned}
 $$
 
@@ -642,7 +642,7 @@ $$
 $$
 \begin{aligned}
 (LHS) &= \mu^{-1}\mathrm{rot}\bm{A}\cdot\mathrm{rot}\bm{N}_ {e'} + \mathrm{div}(\mu^{-1}\mathrm{rot}\bm{A}\times\bm{N}_ {e'}) \\
-      &+\sigma(\bm{N}_ {e'}\cdot\dot{\bm{A}} + \mathrm{grad}\dot{\phi}) \\
+      &+\sigma(\bm{N}_ {e'}\cdot\dot{\bm{A}} + \mathrm{grad}\dot{\phi})
 \end{aligned}
 $$
 ~~これを要素$m$内の$\bm{x}$について積分(要素$m$内、体積分)する。~~
@@ -660,7 +660,7 @@ $$
       &+ \int_{\Omega}\sigma(\bm{N}_ {e'}\cdot\dot{\bm{A}} + \bm{N}_ {e'}\cdot\mathrm{grad}\dot{\phi}) \mathrm{d}V \\
       &= \int_{\Omega}\mu^{-1}\mathrm{rot}\bm{A}\cdot\mathrm{rot}\bm{N}_ {e'}\mathrm{d}V
       + \int_{\partial \Omega}\mu^{-1}\mathrm{rot}\bm{A}\times\bm{N}_ {e'}\cdot\mathrm{d}\bm{S} \\
-      &+ \int_{\Omega}\sigma(\bm{N}_ {e'}\cdot\dot{\bm{A}} + \bm{N}_ {e'}\cdot\mathrm{grad}\dot{\phi}) \mathrm{d}V \\
+      &+ \int_{\Omega}\sigma(\bm{N}_ {e'}\cdot\dot{\bm{A}} + \bm{N}_ {e'}\cdot\mathrm{grad}\dot{\phi}) \mathrm{d}V
 \end{aligned}
 $$
 ここで二段目の式変形の第二項ではガウスの法則を使った。
@@ -669,7 +669,7 @@ $$
 $$
 \begin{aligned}
 (LHS) &= \int_{\Omega}\mu^{-1}\mathrm{rot}\bm{A}\cdot\mathrm{rot}\bm{N}_ {e'}\mathrm{d}V
-      + \int_{\Omega}\sigma(\bm{N}_ {e'}\cdot\dot{\bm{A}} + \bm{N}_ {e'}\cdot\mathrm{grad}\dot{\phi}) \mathrm{d}V \\
+      + \int_{\Omega}\sigma(\bm{N}_ {e'}\cdot\dot{\bm{A}} + \bm{N}_ {e'}\cdot\mathrm{grad}\dot{\phi}) \mathrm{d}V
 \end{aligned}
 $$
 さて、積分の前提として積分対象は非交叉な積分対象に分割できる。  
@@ -685,7 +685,7 @@ $$
       + \int_{V_m}\sigma(\bm{N}_ {e'}\cdot\dot{\bm{A}} + \bm{N}_ {e'}\cdot\mathrm{grad}\dot{\phi}) \mathrm{d}V \\
       &= \sum_{e\in m_E} A_ e\int_{V_m}\mu^{-1}\mathrm{rot}\bm{N}_ e\cdot\mathrm{rot}\bm{N}_ {e'}\mathrm{d}V \\
       &+ \sum_{e\in m_E}\dot{A}_ e\int_{V_m}\sigma\bm{N}_ {e'}\cdot\bm{N}_ e \mathrm{d}V
-      + \sum_{n\in m_N}\dot{\phi}_ n\int_{V_m}\sigma\bm{N}_ {e'}\cdot\mathrm{grad}L_n \mathrm{d}V \\
+      + \sum_{n\in m_N}\dot{\phi}_ n\int_{V_m}\sigma\bm{N}_ {e'}\cdot\mathrm{grad}L_n \mathrm{d}V
 \end{aligned}
 $$
 そこで

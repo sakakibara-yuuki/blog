@@ -1,5 +1,9 @@
+import lightsvg from '@assets/light.svg?url';
+import darksvg from '@assets/dark.svg?url';
 import "./Header.css"
+import { Switch, Match } from 'solid-js';
 import { Button } from '@components/Button';
+import { Search } from  '@components/Search';
 import { useStore } from '@nanostores/solid';
 import { Theme, theme } from '@store/theme';
 
@@ -14,18 +18,19 @@ export const Header = () => {
   return (
     <header>
       <div class="icon">
-        This is good icon
+        some icon
       </div>
-      <div class="search">
-        good search bar
-      </div>
+      <Search />
       <nav>
-        <div class="button__theme">
-          <Button onClick={toggleTheme}>{$theme()}</Button>
-        </div>
-        <div class="button__menu">
-          <Button onClick={toggleTheme}>{$theme()}</Button>
-        </div>
+        <Switch>
+          <Match when={$theme() == Theme.dark}>
+            <Button onClick={toggleTheme}><img src={lightsvg} alt="Switch to light theme" /></Button>
+          </Match>
+          <Match when={$theme() == Theme.light}>
+            <Button onClick={toggleTheme}><img src={darksvg} alt="Switch to dark theme" /></Button>
+          </Match>
+        </Switch>
+        <Button onClick={toggleTheme}>menu</Button>
       </nav>
     </header>
   )

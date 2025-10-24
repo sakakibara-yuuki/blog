@@ -9,10 +9,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/db": "^0.18.0",
+    "@astrojs/db": "^0.18.1",
     "@astrojs/solid-js": "^5.1.1",
     "@nanostores/solid": "^1.1.1",
-    "astro": "^5.14.8",
+    "astro": "^5.15.1",
     "nanostores": "^1.0.1",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",

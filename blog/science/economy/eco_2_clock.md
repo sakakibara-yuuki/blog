@@ -79,7 +79,7 @@ b_t =
 \begin{cases}
  1 & \text{if} v_{t-1} < v_t \\
  b_{t-1} & \text{if} v_{t-1} = v_t \\
--1 & \text{if} v_{t-1} > v_t \\
+-1 & \text{if} v_{t-1} > v_t
 \end{cases}
 $$
 ここで$b_t \in \set{-1, 1}$であり、この累積が一定値を超えたらサンプリングするという方法である。  
@@ -130,7 +130,7 @@ $$
                      &= \mathbb{E}[T\frac{\sum_{t|b_t=1}v_t - \sum_{t|b_t=-1}v_t}{T}] \\
                      &= \mathbb{E}[T(\frac{\sum_{t|b_t=1}v_t}{T} - \frac{\sum_{t|b_t=-1}v_t}{T})] \\
                      &= \mathbb{E}[T(P(b_t=1)E[v_t|b_t=1] - P(b_t=-1)E[v_t|b_t=-1])] \\
-                     &= \mathbb{E}[T](P(b_t=1)E[v_t|b_t=1] - P(b_t=-1)E[v_t|b_t=-1]) \\
+                     &= \mathbb{E}[T](P(b_t=1)E[v_t|b_t=1] - P(b_t=-1)E[v_t|b_t=-1])
 \end{aligned}
 $$
 ここで、簡略化のために$v^+=P(b_t=1)E[v_t|b_t=1]$とし,  
@@ -181,7 +181,7 @@ $$
 $$
 そして、runによるbarのサイズは
 $$
-T^* = \arg\min_T\set{|\theta_T|\geq| \\
+T^* = \arg\min_T\set{|\theta_T|\geq|
                     \mathbb{E}[T]\max\set{P(b_t=1)\mathbb{E}[v_t|b_t=1],\ P(b_t=-1)\mathbb{E}[v_t|b_t=-1]}
 |}
 $$
@@ -226,7 +226,7 @@ h_{i,t-1} & \text{otherwise}
 \begin{cases}
 p_{i,t}-o_{i,t} & \text{if}\ t-1 \in B \\
 \Delta p_{i,t} & \text{otherwise}
-\end{cases} \\
+\end{cases}
 \end{aligned}
 $$
 
@@ -242,7 +242,7 @@ $$
 K_t &= K_{t-1} + \sum_{i=1}^I t\text{期での合計損益} \\
     &= K_{t-1} + \sum_{i=1}^I \{t-1\text{期での株数}\}\times \{\text{各株からの利益率}\} \\
     &= K_{t-1} + \sum_{i=1}^I \{t-1\text{期での株数}\} \\
-    &\times \{\text{為替レート}\} \times \{\text{株の価格変動}\}\\
+    &\times \{\text{為替レート}\} \times \{\text{株の価格変動}\}
 \end{aligned}
 $$
 
@@ -284,7 +284,7 @@ $$
 $$
 \begin{aligned}
 \omega &= W^{-1}\beta \\
-&= W^T\beta \\
+&= W^T\beta
 \end{aligned}
 $$
 となる。

@@ -1,6 +1,5 @@
 import type { ParentComponent } from 'solid-js';
 import { useStore } from '@nanostores/solid';
-import { createEffect } from 'solid-js'
 import { Theme, theme } from '@store/theme';
 
 export const ThemeProvider: ParentComponent = (props) => {

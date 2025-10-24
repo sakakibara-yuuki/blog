@@ -1,0 +1,33 @@
+/*
+ * Search.css
+ * Copyright (C) 2025 sakakibara
+ *
+ * Distributed under terms of the MIT license.
+ */
+
+.search {
+  border: solid;
+  display: flex;
+  gap: 0.125rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.search input {
+  width: 100%;
+  line-height: 1.25rem;
+  vertical-align: baseline;
+  background: var(--tertiary);
+  color: var(--on-tertiary);
+  border: 0.125rem solid var(--on-primary);
+  padding-left: 0.75rem;
+}
+
+.search img {
+  cursor: pointer;
+  width: 32px;
+}
+
+.search button {
+  border: 0;
+}
