@@ -31,20 +31,22 @@ import { ThemeProvider } from '@components/ThemeProvider'
 <style is:global>
     @charset "utf-8";
 
-    :root {
+    * {
       box-sizing: border-box;
+    }
 
+    :root {
       --small-size: 480px;
       --midium-size: 768px;
       --large-size: 1024px;
 
-      --small-font: 1rem;
+      --small-font: 1.125rem;
       --midium-font: 1.5rem;
       --large-font: 1.75rem;
+
       font-family:"Noto Sans CJK JP";
       font-size: 1.125rem;
       font-weight: 400;
-      line-height: 29px;
     }
 
     html {
@@ -106,42 +108,5 @@ import { ThemeProvider } from '@components/ThemeProvider'
     }
     a:visited {
       color: var(--on-background);
-    }
-
-    .primary-box {
-      background: var(--primary);
-      color: var(--on-primary);
-      height: 3rem;
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
-    .secondary-box {
-      background: var(--secondary);
-      color: var(--on-secondary);
-      height: 3rem;
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
-    .tertiary-box {
-      background: var(--tertiary);
-      color: var(--on-tertiary);
-      height: 3rem;
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
-    .success-box {
-      background: var(--success);
-      color: var(--on-success);
-      height: 3rem;
-    }
-    .error-box {
-      background: var(--error);
-      color: var(--on-error);
-      height: 3rem;
-    }
-    .warning-box {
-      background: var(--warning);
-      color: var(--on-warning);
-      height: 3rem;
     }
 </style>
