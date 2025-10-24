@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="48"
+   height="48"
+   viewBox="0 0 48 48"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   sodipodi:docname="search.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     inkscape:zoom="12.654265"
+     inkscape:cx="13.592255"
+     inkscape:cy="24.33962"
+     inkscape:window-width="1912"
+     inkscape:window-height="1019"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="rect1"
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.5;stroke-opacity:1;opacity:1;stroke-dasharray:none;stroke-linejoin:miter"
+       d="M 29.347263,5.1263502 A 14.726992,14.726992 0 0 0 14.618747,19.852913 14.726992,14.726992 0 0 0 18.191013,29.466195 L 4.5191373,40.124398 c -0.6713979,0.523414 -0.7909924,1.484851 -0.2675785,2.156249 0.5234145,0.671399 1.4868053,0.790992 2.1582032,0.267579 L 20.45859,31.595101 A 14.726992,14.726992 0 0 0 29.347262,34.579475 14.726992,14.726992 0 0 0 44.073825,19.852913 14.726992,14.726992 0 0 0 29.347263,5.1263502 Z m 0,2.7382809 A 11.989175,11.989175 0 0 1 41.335544,19.852913 11.989175,11.989175 0 0 1 29.347263,31.843148 11.989175,11.989175 0 0 1 17.357028,19.852913 11.989175,11.989175 0 0 1 29.347263,7.8646311 Z" />
+  </g>
+</svg>
