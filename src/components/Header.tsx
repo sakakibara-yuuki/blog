@@ -1,3 +1,5 @@
+import lightsvg from '@assets/light.svg?url';
+import darksvg from '@assets/dark.svg?url';
 import "./Header.css"
 import { Button } from '@components/Button';
 import { Search } from  '@components/Search';
@@ -19,7 +21,14 @@ export const Header = () => {
       </div>
       <Search />
       <nav>
-        <Button onClick={toggleTheme}>{$theme()}</Button>
+        <Switch>
+          <Match when={$theme() == Theme.dark}>
+            <Button onClick={toggleTheme}><img src={lightsvg} alt="" /></Button>
+          </Match>
+          <Match when={$theme() == Theme.light}>
+            <Button onClick={toggleTheme}><img src={darksvg} alt="" /></Button>
+          </Match>
+        </Switch>
         <Button onClick={toggleTheme}>menu</Button>
       </nav>
     </header>
