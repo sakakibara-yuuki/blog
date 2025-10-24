@@ -1,4 +1,4 @@
-public/
+public/*.svg
 
 blog/test/*.md
 # build output
