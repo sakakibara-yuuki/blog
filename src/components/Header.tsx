@@ -23,10 +23,10 @@ export const Header = () => {
       <nav>
         <Switch>
           <Match when={$theme() == Theme.dark}>
-            <Button onClick={toggleTheme}><img src={lightsvg} alt="" /></Button>
+            <Button onClick={toggleTheme}><img src={lightsvg} alt="Switch to light theme" /></Button>
           </Match>
           <Match when={$theme() == Theme.light}>
-            <Button onClick={toggleTheme}><img src={darksvg} alt="" /></Button>
+            <Button onClick={toggleTheme}><img src={darksvg} alt="Switch to dark theme" /></Button>
           </Match>
         </Switch>
         <Button onClick={toggleTheme}>menu</Button>

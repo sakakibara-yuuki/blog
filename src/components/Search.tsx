@@ -7,7 +7,7 @@ export const Search = () => {
     <div class="search">
       <label for="site-search" />
       <input type="search" id="site-search" placeholder="python api ..." />
-      <Button><img src={searchsvg} alt="" /></Button>
+      <Button><img src={searchsvg} alt="Search" /></Button>
     </div>
   )
 }
