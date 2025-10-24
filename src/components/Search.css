@@ -23,30 +23,11 @@ input {
   padding-left: 0.75rem
 }
 
-button {
-  border: 1px solid var(--on-primary);
-  border-radius: 0;
-  background: transparent;
-  color: var(--on-primary);
-  border: 0;
-}
-
-button:hover {
-  background: var(--secondary);
-}
-
-button:active {
-  background: var(--tertiary);
-}
-
 img {
   cursor: pointer;
   width: 32px;
 }
 
-/* .button__search > *{ */
-/*   vertical-align: baseline; */
-/*   text-box: trim-end cap alphabetic; */
-/*   text-align: center; */
-/*   line-height: 100%; */
-/* } */
+.search button {
+  border: 0;
+}

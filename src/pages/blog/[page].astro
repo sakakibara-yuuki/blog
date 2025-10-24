@@ -58,8 +58,12 @@ const { page } = Astro.props;
 
   }
 
-  .pages ul > * {
+  .pages li {
     margin: 0.25rem 1rem;
+  }
+
+  .pages a {
+    text-decoration: none;
   }
 
   .pagination {
@@ -74,7 +78,11 @@ const { page } = Astro.props;
     padding: 0 1rem;
   }
 
-  .pagination > .first--disabled, .prev--disabled, .next--disabled, .last--disabled {
+  .pagination a {
+    text-decoration: none;
+  }
+
+  .pagination .first--disabled, .prev--disabled, .next--disabled, .last--disabled {
     color: hsl(from var(--on-primary) h s 40);
   }
 

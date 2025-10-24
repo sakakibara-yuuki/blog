@@ -30,9 +30,3 @@ nav {
   justify-items: end;
 }
 
-nav button {
-  border: 3px solid var(--on-primary);
-  border-radius: 0;
-  background: transparent;
-  color: var(--on-primary);
-}

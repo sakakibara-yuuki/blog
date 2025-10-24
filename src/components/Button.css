@@ -1,0 +1,23 @@
+/*
+ * Button.css
+ * Copyright (C) 2025 sakakibara
+ *
+ * Distributed under terms of the MIT license.
+ */
+
+
+button {
+  border: 0.125rem solid var(--on-primary);
+  border-radius: 0;
+  background: transparent;
+  color: var(--on-primary);
+}
+
+button:hover {
+  background: var(--secondary);
+}
+
+button:active {
+  background: var(--tertiary);
+}
+
