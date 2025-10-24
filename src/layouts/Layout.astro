@@ -23,24 +23,6 @@ import { ThemeProvider } from '@components/ThemeProvider'
     <body>
       <ThemeProvider client:load>
         <Header client:load />
-        <!-- <div class="primary-box"> -->
-        <!--   <p>primary box</p> -->
-        <!-- </div> -->
-        <!-- <div class="secondary-box"> -->
-        <!--   <p>secondary box</p> -->
-        <!-- </div> -->
-        <!-- <div class="tertiary-box"> -->
-        <!--   <p>tertiary box</p> -->
-        <!-- </div> -->
-        <!-- <div class="success-box"> -->
-        <!--   <p>success box</p> -->
-        <!-- </div> -->
-        <!-- <div class="error-box"> -->
-        <!--   <p>error box</p> -->
-        <!-- </div> -->
-        <!-- <div class="warning-box"> -->
-        <!--   <p>warning box</p> -->
-        <!-- </div> -->
         <slot />
       </ThemeProvider>
     </body>
@@ -162,11 +144,4 @@ import { ThemeProvider } from '@components/ThemeProvider'
       color: var(--on-warning);
       height: 3rem;
     }
-
-  /* @media screen and (min-width: var(--large-size)) { */
-  /**/
-  /* } */
-  /* @media screen and (min-width: var(--midium-size)) { */
-  /**/
-  /* } */
 </style>
